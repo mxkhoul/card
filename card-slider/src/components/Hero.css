@@ -1,0 +1,102 @@
+.hero {
+  position: relative;
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+    height: 100vh;                  
+  background: url("/bg.jpg") center / cover no-repeat;    
+}
+
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
+}
+
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2)
+  );
+}
+
+/* النص */
+.hero-content {
+  position: absolute;
+  bottom: 60px;
+  left: 15%;
+  transform: translateX(-50%);
+  
+  color: #fff;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 218px;
+  font-weight: 800;
+  
+}
+
+.hero-content p {
+  font-size: 90px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-size: 88px;
+  height: 200px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  background: #fff;
+  color: #000;
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+  
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  
+  }
+  .hero-content {
+  position: absolute;
+  bottom: 60px;
+  left: 35%;
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 2;
+}
+  .hero-content button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 40px;
+  font-size: 8px;
+  cursor: pointer;
+  height: 55px;
+  transition: 0.3s;
+}
+
+
+  .hero-content p {
+    font-size: 20px;
+  }
+}
