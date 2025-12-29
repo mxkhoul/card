@@ -25,27 +25,34 @@ const Order = () => {
     fetchOrders();
   }, []);
 
-  if (loading) return <p className="loading">Loading...</p>;
-
   return (
     <div className="order-page">
       <div className="masonry-container">
-        {orders.map((order) => (
-          <div
-            className="masonry-item"
-            key={order.id}
-            onClick={() =>
-              navigate(`/template/${order.id}`, { state: order })
-            }
-          >
-            <img
-              src={getJpgImage(order)}
-              alt={order.name}
-              loading="lazy"
-            />
-            <h3>{order.name}</h3>
-          </div>
-        ))}
+        {loading
+          ? 
+            Array.from({ length: 12 }).map((_, index) => (
+              <div className="masonry-item" key={index}>
+                <img src="/images/loading.jpg" alt="loading" />
+                <h3>Loading...</h3>
+              </div>
+            ))
+          : 
+            orders.map((order) => (
+              <div
+                className="masonry-item"
+                key={order.id}
+                onClick={() =>
+                  navigate(`/template/${order.id}`, { state: order })
+                }
+              >
+                <img
+                  src={getJpgImage(order)}
+                  alt={order.name}
+                  loading="lazy"
+                />
+                <h3>{order.name}</h3>
+              </div>
+            ))}
       </div>
     </div>
   );

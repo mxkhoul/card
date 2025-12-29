@@ -1,0 +1,9 @@
+.home {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background: #bbd2e7;
+  font-family: Arial, sans-serif;
+}

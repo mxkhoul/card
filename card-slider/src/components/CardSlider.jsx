@@ -23,10 +23,8 @@ export default function CardSlider() {
   }, []);
 
   return (
-    <div>
-      <div className="container">
-        <h1 className="choosetext">Choose wisely</h1>
-      </div>
+    <section className="card-slider-wrapper">
+      <h1 className="choosetext">Choose wisely</h1>
 
       <Swiper
         centeredSlides
@@ -42,20 +40,21 @@ export default function CardSlider() {
       >
         {products.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="card">
-              <img
-                src={getImage(item)}
-                alt={item.name}
-              />
+            <div className="product-card">
+              <img src={getImage(item)} alt={item.name} />
               <div className="card-name">{item.name}</div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }
 
 const getImage = (item) => {
-  return item.media?.find((m) => m.type === "jpg" || m.type === "png" )?.url || "/placeholder.jpg";
+  return (
+    item.media?.find(
+      (m) => m.type === "jpg" || m.type === "png"
+    )?.url || "/placeholder.jpg"
+  );
 };

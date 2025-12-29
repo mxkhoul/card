@@ -1,20 +1,20 @@
+/* ---------- Hero Section ---------- */
 .hero {
   position: relative;
   width: 100%;
+  height: 100vh;
   border-radius: 40px;
   overflow: hidden;
-    height: 100vh;                  
-  background: url("/bg.jpg") center / cover no-repeat;    
+  background: url("/bg.jpg") center / cover no-repeat;
 }
-
 
 .hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        
+  object-fit: cover;
 }
 
-
+/* Overlay */
 .hero::after {
   content: "";
   position: absolute;
@@ -26,37 +26,37 @@
   );
 }
 
-/* النص */
+
 .hero-content {
   position: absolute;
   bottom: 60px;
-  left: 15%;
-  transform: translateX(-50%);
-  
+  left: 8%;                 
+  transform: none;        
   color: #fff;
   z-index: 2;
+  max-width: 45%;           
+  text-align: left;           
 }
 
 .hero-content h1 {
-  font-size: 218px;
+  font-size: 80px;       
   font-weight: 800;
-  
+  margin: 0 0 20px 0;
 }
 
 .hero-content p {
-  font-size: 90px;
+  font-size: 38px;         
   opacity: 0.9;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .hero-content button {
   background: transparent;
   border: 2px solid #fff;
   color: #fff;
-  padding: 14px 36px;
+  padding: 20px 40px;
   border-radius: 40px;
-  font-size: 88px;
-  height: 200px;
+  font-size: 32px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -65,38 +65,43 @@
   background: #fff;
   color: #000;
 }
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-  
-  }
 
+/* ---------- Media Queries ---------- */
+@media (max-width: 1024px) {
+  .hero-content {
+    max-width: 60%;
+    left: 8%;
+  }
+  .hero-content h1 {
+    font-size: 80px;
+  }
+  .hero-content p {
+    font-size: 32px;
+  }
+  .hero-content button {
+    font-size: 24px;
+    padding: 16px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    left: 50%;               /* نرجع الوسط للموبايل */
+    bottom: 40px;
+    max-width: 90%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
   .hero-content h1 {
     font-size: 38px;
-  
   }
-  .hero-content {
-  position: absolute;
-  bottom: 60px;
-  left: 35%;
-  transform: translateX(-50%);
-  color: #fff;
-  z-index: 2;
-}
-  .hero-content button {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 14px 36px;
-  border-radius: 40px;
-  font-size: 8px;
-  cursor: pointer;
-  height: 55px;
-  transition: 0.3s;
-}
-
-
   .hero-content p {
     font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .hero-content button {
+    font-size: 16px;
+    padding: 10px 25px;
+    height: auto;
   }
 }
